@@ -45,5 +45,15 @@ namespace ScoreBoardTests
 
             Assert.Pass();
         }
+
+        [Test]
+        public void CanUpdateGameScore()
+        {
+            int gameId = ScoreBoard.StartGame("Spain", "Germany");
+
+            ScoreBoard.UpdateScore(gameId, 3, 2);
+
+            Assert.Pass();
+        }
     }
 }
