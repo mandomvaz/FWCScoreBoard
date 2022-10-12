@@ -71,5 +71,13 @@ namespace ScoreBoardTests
             int gameId = ScoreBoard.StartGame("Spain", "Germany");
             Assert.Throws<ArgumentOutOfRangeException>(() => ScoreBoard.UpdateScore(gameId, homeTeamScore, awayTeamScore));
         }
+
+        [Test]
+        public void CanGetSummary()
+        {
+            ScoreBoard.GetSummary();
+
+            Assert.Pass();
+        }
     }
 }
