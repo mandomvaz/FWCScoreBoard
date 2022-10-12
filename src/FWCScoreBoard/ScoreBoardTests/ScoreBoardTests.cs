@@ -21,5 +21,13 @@ namespace ScoreBoardTests
 
             Assert.Pass();
         }
+
+        [Test]
+        public void StartGameThrowExceptionOnEmptyValues()
+        {
+            ScoreBoard scoreBoard = new ScoreBoard();
+
+            Assert.Throws<ArgumentException>(() => scoreBoard.StartGame("", "Germany"));
+        }
     }
 }
