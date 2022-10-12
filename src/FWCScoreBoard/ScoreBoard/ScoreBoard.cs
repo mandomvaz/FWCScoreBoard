@@ -11,6 +11,11 @@
 
         public void StartGame(string homeTeam, string awayTeam)
         {
+            if(String.IsNullOrWhiteSpace(homeTeam) || String.IsNullOrWhiteSpace(awayTeam))
+            {
+                throw new ArgumentException();
+            }
+
             Games.Add($"{homeTeam} 0 - {awayTeam} 0");
         }
     }
