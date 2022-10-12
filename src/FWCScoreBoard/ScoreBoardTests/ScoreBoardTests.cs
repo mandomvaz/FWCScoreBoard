@@ -32,5 +32,15 @@ namespace ScoreBoardTests
 
             Assert.Throws<ArgumentException>(() => scoreBoard.StartGame(homeTeam, awayTeam));
         }
+
+        [Test]
+        public void StartGameReturnIntegerId()
+        {
+            ScoreBoard scoreBoard = new ScoreBoard();
+
+            var id = scoreBoard.StartGame("Spain", "Germany");
+
+            Assert.That(id, Is.TypeOf<int>());
+        }
     }
 }
