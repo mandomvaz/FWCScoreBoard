@@ -79,5 +79,34 @@ namespace ScoreBoardTests
 
             Assert.Pass();
         }
+
+        [Test]
+        public void GetSummaryReturnGameInformation()
+        {
+            int gameId = ScoreBoard.StartGame("Mexico", "Canada");
+            ScoreBoard.UpdateScore(gameId, 0, 5);
+
+            gameId = ScoreBoard.StartGame("Spain", "Brazil");
+            ScoreBoard.UpdateScore(gameId, 10, 2);
+
+            gameId = ScoreBoard.StartGame("Germany", "France");
+            ScoreBoard.UpdateScore(gameId, 2, 2);
+
+            gameId = ScoreBoard.StartGame("Uruguay", "Italy");
+            ScoreBoard.UpdateScore(gameId, 6, 6);
+
+            gameId = ScoreBoard.StartGame("Argentina", "Australia");
+            ScoreBoard.UpdateScore(gameId, 3, 1);
+
+            string summary = ScoreBoard.GetSummary();
+
+            Assert.That(summary, Contains.Substring("Mexico 0 - Canada 5"));
+            Assert.That(summary, Contains.Substring("Spain 10 - Brazil 2"));
+            Assert.That(summary, Contains.Substring("Germany 2 - France 2"));
+            Assert.That(summary, Contains.Substring("Uruguay 6 - France 6"));
+            Assert.That(summary, Contains.Substring("Argentina 3 - Australia 1"));
+
+
+        }
     }
 }
