@@ -53,10 +53,11 @@ namespace ScoreBoardNS
         {
             StringBuilder summaryBuilder = new StringBuilder();
 
-            Games.Values
-                .OrderByDescending(game => game.HomeTeamScore + game.AwayTeamScore)
+            Games.ToList()
+                .OrderByDescending(element => element.Value.HomeTeamScore + element.Value.AwayTeamScore)
+                .ThenByDescending(element => element.Key)
                 .ToList()
-                .ForEach(game => summaryBuilder.AppendLine(game.ToSummaryString()));
+                .ForEach(element => summaryBuilder.AppendLine(element.Value.ToSummaryString()));
 
             return summaryBuilder.ToString();
         }
