@@ -23,11 +23,14 @@ namespace ScoreBoardTests
         }
 
         [Test]
-        public void StartGameThrowExceptionOnEmptyValues()
+        [TestCase("", "Germany")]
+        [TestCase("Spain", "")]
+        [TestCase("", "")]
+        public void StartGameThrowExceptionOnEmptyValues(string homeTeam, string awayTeam)
         {
             ScoreBoard scoreBoard = new ScoreBoard();
 
-            Assert.Throws<ArgumentException>(() => scoreBoard.StartGame("", "Germany"));
+            Assert.Throws<ArgumentException>(() => scoreBoard.StartGame(homeTeam, awayTeam));
         }
     }
 }
