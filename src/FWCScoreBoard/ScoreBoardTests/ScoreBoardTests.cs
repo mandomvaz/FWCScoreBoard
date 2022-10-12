@@ -4,20 +4,17 @@ namespace ScoreBoardTests
 {
     public class ScoreBoardTests
     {
-        [Test]
-        public void ScoreBoardCanInstantiate()
+        private ScoreBoard ScoreBoard { get; set; }
+        [SetUp]
+        public void Setup()
         {
-            ScoreBoard scoreBoard = new ScoreBoard();
-            
-            Assert.That(scoreBoard, Is.Not.Null);
+            ScoreBoard = new ScoreBoard();
         }
 
         [Test]
         public void CanStartGame()
         {
-            ScoreBoard scoreBoard = new ScoreBoard();
-
-            scoreBoard.StartGame("Spain", "Germany");
+            ScoreBoard.StartGame("Spain", "Germany");
 
             Assert.Pass();
         }
@@ -28,17 +25,13 @@ namespace ScoreBoardTests
         [TestCase("", "")]
         public void StartGameThrowExceptionOnEmptyValues(string homeTeam, string awayTeam)
         {
-            ScoreBoard scoreBoard = new ScoreBoard();
-
-            Assert.Throws<ArgumentException>(() => scoreBoard.StartGame(homeTeam, awayTeam));
+            Assert.Throws<ArgumentException>(() => ScoreBoard.StartGame(homeTeam, awayTeam));
         }
 
         [Test]
         public void StartGameReturnIntegerId()
         {
-            ScoreBoard scoreBoard = new ScoreBoard();
-
-            var id = scoreBoard.StartGame("Spain", "Germany");
+            var id = ScoreBoard.StartGame("Spain", "Germany");
 
             Assert.That(id, Is.TypeOf<int>());
         }
