@@ -94,6 +94,24 @@ namespace ScoreBoardTests
             Assert.That(summary, Contains.Substring("Argentina 3 - Australia 1"));
         }
 
+        [Test]
+        public void GetSummaryReturnGameInformationOrderByTotalScore()
+        {
+            SetExampleData();
+
+            string summary = ScoreBoard.GetSummary();
+
+            string expectedSummary = "";
+
+            expectedSummary += "Spain 10 - Brazil 2\r\n";
+            expectedSummary += "Uruguay 6 - Italy 6\r\n";
+            expectedSummary += "Mexico 0 - Canada 5\r\n";
+            expectedSummary += "Germany 2 - France 2\r\n";
+            expectedSummary += "Argentina 3 - Australia 1\r\n";
+
+            Assert.That(summary, Is.EqualTo(expectedSummary));
+        }
+
         private void SetExampleData() 
         {
             int gameId = ScoreBoard.StartGame("Mexico", "Canada");
