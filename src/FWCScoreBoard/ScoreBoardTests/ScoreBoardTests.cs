@@ -83,6 +83,19 @@ namespace ScoreBoardTests
         [Test]
         public void GetSummaryReturnGameInformation()
         {
+            SetExampleData();
+
+            string summary = ScoreBoard.GetSummary();
+
+            Assert.That(summary, Contains.Substring("Mexico 0 - Canada 5"));
+            Assert.That(summary, Contains.Substring("Spain 10 - Brazil 2"));
+            Assert.That(summary, Contains.Substring("Germany 2 - France 2"));
+            Assert.That(summary, Contains.Substring("Uruguay 6 - Italy 6"));
+            Assert.That(summary, Contains.Substring("Argentina 3 - Australia 1"));
+        }
+
+        private void SetExampleData() 
+        {
             int gameId = ScoreBoard.StartGame("Mexico", "Canada");
             ScoreBoard.UpdateScore(gameId, 0, 5);
 
@@ -97,16 +110,6 @@ namespace ScoreBoardTests
 
             gameId = ScoreBoard.StartGame("Argentina", "Australia");
             ScoreBoard.UpdateScore(gameId, 3, 1);
-
-            string summary = ScoreBoard.GetSummary();
-
-            Assert.That(summary, Contains.Substring("Mexico 0 - Canada 5"));
-            Assert.That(summary, Contains.Substring("Spain 10 - Brazil 2"));
-            Assert.That(summary, Contains.Substring("Germany 2 - France 2"));
-            Assert.That(summary, Contains.Substring("Uruguay 6 - Italy 6"));
-            Assert.That(summary, Contains.Substring("Argentina 3 - Australia 1"));
-
-
         }
     }
 }
