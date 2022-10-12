@@ -49,7 +49,11 @@
 
         public string GetSummary()
         {
-            return "";
+            string summary = "";
+
+            Games.Values.ToList().ForEach(game => summary += $"{game.HomeTeamName} {game.HomeTeamScore} - {game.AwayTeamName} {game.AwayTeamScore}\n");
+
+            return summary;
         }
     }
 }
