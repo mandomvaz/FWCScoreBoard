@@ -38,6 +38,11 @@
                 throw new ArgumentException();
             }
 
+            if(homeTeamScore < 0 || awayTeamScore < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             gameToUpdate.HomeTeamScore = homeTeamScore;
             gameToUpdate.AwayTeamScore = awayTeamScore;
         }
