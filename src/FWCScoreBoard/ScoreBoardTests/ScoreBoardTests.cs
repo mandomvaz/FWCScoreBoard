@@ -103,7 +103,7 @@ namespace ScoreBoardTests
             Assert.That(summary, Contains.Substring("Mexico 0 - Canada 5"));
             Assert.That(summary, Contains.Substring("Spain 10 - Brazil 2"));
             Assert.That(summary, Contains.Substring("Germany 2 - France 2"));
-            Assert.That(summary, Contains.Substring("Uruguay 6 - France 6"));
+            Assert.That(summary, Contains.Substring("Uruguay 6 - Italy 6"));
             Assert.That(summary, Contains.Substring("Argentina 3 - Australia 1"));
 
 
