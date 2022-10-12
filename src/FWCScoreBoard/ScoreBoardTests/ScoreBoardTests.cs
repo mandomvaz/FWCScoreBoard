@@ -35,5 +35,15 @@ namespace ScoreBoardTests
 
             Assert.That(id, Is.TypeOf<int>());
         }
+
+        [Test]
+        public void CanFinishGame()
+        {
+            int gameId = ScoreBoard.StartGame("Spain", "Germany");
+
+            ScoreBoard.FinishGame(gameId);
+
+            Assert.Pass();
+        }
     }
 }
