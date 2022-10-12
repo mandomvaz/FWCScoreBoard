@@ -55,5 +55,11 @@ namespace ScoreBoardTests
 
             Assert.Pass();
         }
+
+        [Test]
+        public void UpdateScoreThrowExceptionOnInvalidId()
+        {
+            Assert.Throws<ArgumentException>(()=> ScoreBoard.UpdateScore(1, 1, 1));
+        }
     }
 }
