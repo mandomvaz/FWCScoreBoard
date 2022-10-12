@@ -16,5 +16,10 @@
             HomeTeamScore = 0;
             AwayTeamScore = 0;
         }
+
+        internal string ToSummaryString()
+        {
+            return $"{HomeTeamName} {HomeTeamScore} - {AwayTeamName} {AwayTeamScore}";
+        }
     }
 }

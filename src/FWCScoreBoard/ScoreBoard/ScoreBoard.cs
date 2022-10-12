@@ -1,4 +1,6 @@
-﻿namespace ScoreBoardNS
+﻿using System.Text;
+
+namespace ScoreBoardNS
 {
     public class ScoreBoard
     {
@@ -49,11 +51,11 @@
 
         public string GetSummary()
         {
-            string summary = "";
+            StringBuilder summaryBuilder = new StringBuilder();
 
-            Games.Values.ToList().ForEach(game => summary += $"{game.HomeTeamName} {game.HomeTeamScore} - {game.AwayTeamName} {game.AwayTeamScore}\n");
+            Games.Values.ToList().ForEach(game => summaryBuilder.AppendLine(game.ToSummaryString()));
 
-            return summary;
+            return summaryBuilder.ToString();
         }
     }
 }
