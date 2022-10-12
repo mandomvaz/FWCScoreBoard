@@ -24,5 +24,10 @@
 
             return CurrentId;
         }
+
+        public void FinishGame(int gameId)
+        {
+            Games.Remove(gameId);
+        }
     }
 }
