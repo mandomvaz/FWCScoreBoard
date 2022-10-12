@@ -1,3 +1,5 @@
+using ScoreBoardNS;
+
 namespace ScoreBoardTests
 {
     public class ScoreBoardTests

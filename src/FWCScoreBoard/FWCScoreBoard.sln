@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreBoardTests", "ScoreBoardTests\ScoreBoardTests.csproj", "{04BBAF66-F0FD-462E-AFF0-758A7C2EA42A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreBoard", "ScoreBoard\ScoreBoard.csproj", "{74EDE376-AC49-4498-9113-EBEB6B91CBA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{04BBAF66-F0FD-462E-AFF0-758A7C2EA42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BBAF66-F0FD-462E-AFF0-758A7C2EA42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BBAF66-F0FD-462E-AFF0-758A7C2EA42A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EDE376-AC49-4498-9113-EBEB6B91CBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EDE376-AC49-4498-9113-EBEB6B91CBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EDE376-AC49-4498-9113-EBEB6B91CBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EDE376-AC49-4498-9113-EBEB6B91CBA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
