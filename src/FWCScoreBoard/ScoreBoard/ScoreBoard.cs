@@ -46,5 +46,10 @@
             gameToUpdate.HomeTeamScore = homeTeamScore;
             gameToUpdate.AwayTeamScore = awayTeamScore;
         }
+
+        public string GetSummary()
+        {
+            return "";
+        }
     }
 }
