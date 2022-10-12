@@ -61,5 +61,12 @@ namespace ScoreBoardTests
         {
             Assert.Throws<ArgumentException>(()=> ScoreBoard.UpdateScore(1, 1, 1));
         }
+
+        [Test]
+        public void UpdateScoreThrowExceptionOnNegativeScores()
+        {
+            int gameId = ScoreBoard.StartGame("Spain", "Germany");
+            Assert.Throws<ArgumentOutOfRangeException>(() => ScoreBoard.UpdateScore(gameId, -1, 1));
+        }
     }
 }
