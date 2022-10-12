@@ -63,10 +63,13 @@ namespace ScoreBoardTests
         }
 
         [Test]
-        public void UpdateScoreThrowExceptionOnNegativeScores()
+        [TestCase(-1, 1)]
+        [TestCase(1, -1)]
+        [TestCase(-1, -1)]
+        public void UpdateScoreThrowExceptionOnNegativeScores(int homeTeamScore, int awayTeamScore)
         {
             int gameId = ScoreBoard.StartGame("Spain", "Germany");
-            Assert.Throws<ArgumentOutOfRangeException>(() => ScoreBoard.UpdateScore(gameId, -1, 1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => ScoreBoard.UpdateScore(gameId, homeTeamScore, awayTeamScore));
         }
     }
 }
