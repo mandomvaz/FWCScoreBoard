@@ -32,7 +32,11 @@
 
         public void UpdateScore(int gameId, int homeTeamScore, int awayTeamScore)
         {
-            Game gameToUpdate = Games[gameId];
+            Game gameToUpdate;
+
+            if(!Games.TryGetValue(gameId, out gameToUpdate)){
+                throw new ArgumentException();
+            }
 
             gameToUpdate.HomeTeamScore = homeTeamScore;
             gameToUpdate.AwayTeamScore = awayTeamScore;
