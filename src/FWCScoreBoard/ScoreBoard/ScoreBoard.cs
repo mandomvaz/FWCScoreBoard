@@ -4,12 +4,12 @@ namespace ScoreBoardNS
 {
     public class ScoreBoard
     {
-        private Dictionary<int, Game> Games { get; set; }
+        private Dictionary<int, Game> GamesCollection { get; set; }
         private int CurrentId { get; set; }
 
         public ScoreBoard()
         {
-            Games = new Dictionary<int, Game>();
+            GamesCollection = new Dictionary<int, Game>();
             CurrentId = 0;
         }
 
@@ -22,21 +22,21 @@ namespace ScoreBoardNS
 
             CurrentId += 1;
 
-            Games.Add(CurrentId, new Game(homeTeam, awayTeam));
+            GamesCollection.Add(CurrentId, new Game(homeTeam, awayTeam));
 
             return CurrentId;
         }
 
         public void FinishGame(int gameId)
         {
-            Games.Remove(gameId);
+            GamesCollection.Remove(gameId);
         }
 
         public void UpdateScore(int gameId, int homeTeamScore, int awayTeamScore)
         {
             Game gameToUpdate;
 
-            if(!Games.TryGetValue(gameId, out gameToUpdate)){
+            if(!GamesCollection.TryGetValue(gameId, out gameToUpdate)){
                 throw new ArgumentException();
             }
 
@@ -53,7 +53,7 @@ namespace ScoreBoardNS
         {
             StringBuilder summaryBuilder = new StringBuilder();
 
-            Games.ToList()
+            GamesCollection.ToList()
                 .OrderByDescending(element => element.Value.HomeTeamScore + element.Value.AwayTeamScore)
                 .ThenByDescending(element => element.Key)
                 .ToList()
