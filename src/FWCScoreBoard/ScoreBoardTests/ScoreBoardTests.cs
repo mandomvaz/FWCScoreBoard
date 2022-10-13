@@ -5,6 +5,7 @@ namespace ScoreBoardTests
     public class ScoreBoardTests
     {
         private ScoreBoard ScoreBoard { get; set; }
+
         [SetUp]
         public void Setup()
         {
@@ -59,7 +60,7 @@ namespace ScoreBoardTests
         [Test]
         public void UpdateScoreThrowExceptionOnInvalidId()
         {
-            Assert.Throws<ArgumentException>(()=> ScoreBoard.UpdateScore(1, 1, 1));
+            Assert.Throws<ArgumentException>(() => ScoreBoard.UpdateScore(1, 1, 1));
         }
 
         [Test]
@@ -112,7 +113,7 @@ namespace ScoreBoardTests
             Assert.That(summary, Is.EqualTo(expectedSummary));
         }
 
-        private void SetExampleData() 
+        private void SetExampleData()
         {
             int gameId = ScoreBoard.StartGame("Mexico", "Canada");
             ScoreBoard.UpdateScore(gameId, 0, 5);
